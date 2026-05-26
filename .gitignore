@@ -1,0 +1,22 @@
+# Ambientes Python
+.venv/
+venv/
+env/
+__pycache__/
+*.pyc
+.ipynb_checkpoints/
+
+# VSCode
+.vscode/
+
+# Sistema
+.DS_Store
+Thumbs.db
+
+# Dados (são públicos da E-REDES mas pesados — não versionar)
+data/*.xlsx
+data/codigos_postais/
+
+# Outputs
+results/
+*.log
