@@ -84,8 +84,6 @@ No VSCode: abre o notebook → escolhe o kernel `.venv` → **Run All**.
 ## Principais correções vs. versão original
 
 ### EDA
-- ❌ Removidos os `from google.colab import drive` (corre localmente)
-- ❌ Removido o bug crítico `df_merged.astype(int)` que estragava os valores em kWh e a coluna Data/Hora
 - ✅ `pivot_table` sem `fill_value=0` (mantém NaN visíveis para diagnóstico)
 - ✅ Interpolação temporal das séries (mais correta do que preencher com 0)
 - ✅ Gráficos Sines vs Nacional com **dois eixos Y** (escalas muito diferentes)
@@ -95,46 +93,19 @@ No VSCode: abre o notebook → escolhe o kernel `.venv` → **Run All**.
 - ✅ Unidades (kWh) sempre indicadas nos eixos
 
 ### Modelos (LSTM / GRU / XGBoost)
-- ❌ Removido o bug `pd.to_datetime(df['Data/Hora'], unit='ns')` (corrompia a data)
-- ❌ Adicionados imports em falta no LSTM (`Huber`, `ReduceLROnPlateau`)
-- ❌ Caminho do ficheiro consistente (`data/dataset_completo_sines.xlsx`)
 - ✅ **MAPE robusto** (`safe_mape`) — ignora valores próximos de zero (evita divisão por ~0)
 - ✅ **Split cronológico 80/20 data-driven** (em vez de uma data fixa que podia não existir nos teus dados)
 - ✅ **Seeds fixos** (reprodutibilidade)
 - ✅ Cada modelo grava as suas métricas em `results/metrics_*.csv` → fácil de comparar
 
----
-
-## Como pôr no GitHub (instruções rápidas)
-
-```powershell
-cd C:\Users\sofia\Desktop\UTAD\ECD\Energia_Sines
-
-git init
-git add .
-git commit -m "Projeto inicial: EDA + LSTM + GRU + XGBoost para Sines"
-
-# Cria o repo vazio no github.com (sem README, sem .gitignore)
-git branch -M main
-git remote add origin https://github.com/<o-teu-utilizador>/<nome-do-repo>.git
-git push -u origin main
-```
-
 > ⚠️ Os ficheiros `.xlsx` dentro de `data/` estão **ignorados** pelo `.gitignore`
 > (são pesados e públicos da E-REDES — não faz sentido versioná-los).
 > Se quiseres incluir o `dataset_completo_sines.xlsx`, remove a linha correspondente do `.gitignore`.
 
-Em atualizações futuras:
-
-```powershell
-git add .
-git commit -m "descrição do que mudei"
-git push
-```
-
 ---
 
 ## Autoria
+Andreia Henrique
 
 Trabalho realizado para a **UC de ECD — Universidade de Trás-os-Montes e Alto Douro (UTAD)**.
 Dados: [E-REDES — Open Data](https://e-redes.opendatasoft.com/).
