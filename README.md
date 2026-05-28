@@ -104,8 +104,4 @@ No VSCode: abre o notebook → escolhe o kernel `.venv` → **Run All**.
 
 ---
 
-## Autoria
-Andreia Henrique
-
-Trabalho realizado para a **UC de ECD — Universidade de Trás-os-Montes e Alto Douro (UTAD)**.
 Dados: [E-REDES — Open Data](https://e-redes.opendatasoft.com/).
