@@ -39,15 +39,7 @@ Energia_Sines/
 - **VSCode** com a extensão **Jupyter** (ou Jupyter Lab)
 - Git instalado
 
-### 2. Clonar / abrir o projeto
-
-```bash
-cd C:\Users\sofia\Desktop\UTAD\ECD
-# (já tens o projeto na pasta Energia_Sines)
-code Energia_Sines
-```
-
-### 3. Criar ambiente virtual e instalar dependências
+### 2. Criar ambiente virtual e instalar dependências
 
 No terminal do VSCode (PowerShell):
 
@@ -60,7 +52,7 @@ pip install -r requirements.txt
 
 > No Linux/Mac substitui a 2ª linha por `source .venv/bin/activate`.
 
-### 4. Colocar os dados em `data/`
+### 3. Colocar os dados em `data/`
 
 Cria a pasta `data/` na raiz e coloca lá os ficheiros da E-REDES:
 
@@ -70,7 +62,7 @@ Cria a pasta `data/` na raiz e coloca lá os ficheiros da E-REDES:
 - `energia-injetada-na-rede-de-distribuicao.xlsx` em `data/`
 - `energia-produzida-total-nacional.xlsx` em `data/`
 
-### 5. Executar os notebooks **na ordem**
+### 4. Executar os notebooks **na ordem**
 
 1. **`01_EDA_Sines.ipynb`** → cria `data/dataset_completo_sines.xlsx`
 2. **`02_LSTM.ipynb`** → treina o LSTM e grava `results/metrics_lstm.csv`
